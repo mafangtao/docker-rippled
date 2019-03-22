@@ -10,5 +10,7 @@ RUN rpm -Uvh https://mirrors.ripple.com/ripple-repo-el7.rpm
 RUN yumdownloader --enablerepo=ripple-stable --releasever=el7 rippled
 RUN rpm --import https://mirrors.ripple.com/rpm/RPM-GPG-KEY-ripple-release && rpm -K rippled*.rpm
 RUN alien -i --scripts rippled*.rpm && rm rippled*.rpm
-
+COPY rippled_testnet.conf /etc/rippled_testnet.conf
+COPY rippled_localnet.conf /etc/rippled_localnet.conf
+COPY validators.txt /etc/validators.txt
 ENTRYPOINT ["/opt/ripple/bin/rippled"]

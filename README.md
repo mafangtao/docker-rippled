@@ -5,7 +5,8 @@ This is ubuntu based rippled image
 ## Run with docker
 
     $ docker run -v rippled.conf:/etc/rippled.conf gatehub/rippled --conf /etc/rippled.conf
-
+    $ docker run gatehub/rippled --conf /etc/rippled_testnet.conf
+    $ docker run gatehub/rippled --conf /etc/rippled_localhost.conf
 ## Example node rippled config
 
 ```
